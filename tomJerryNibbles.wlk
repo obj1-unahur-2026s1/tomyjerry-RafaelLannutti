@@ -1,4 +1,7 @@
 object tom {
+    method name() {
+      
+    }
 
 }
 
