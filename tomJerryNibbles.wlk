@@ -9,6 +9,9 @@ object tom {
     method velocidad(){
         return 5 + energia / 10
     }
+    method energia() {
+      return energia
+    }
 }
 
 object jerry {
@@ -19,7 +22,7 @@ object jerry {
     method peso(){
         return edad * 20 // method (){ edad = edad + 1 } -> Esta mal, asignacion o consulta 
     }
-    
+
 }
 
 object nibbles {
