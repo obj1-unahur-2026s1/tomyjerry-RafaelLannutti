@@ -18,8 +18,30 @@ describe "Test escenario de Tom,Jerry y el otro." { //Siempre debe de existir un
   }
 
   test "Si corre 24 metros, entonces su velocidad máxima pasa a ser 14" {
+    tom.comer(jerry) 
     tom.correr(24)
     assert.equals(14,tom.velocidad()) 
   }
+  test "Si corre 24 metros, entonces su energia pasa a ser 90" {
+    tom.comer(jerry) 
+    tom.correr(24)
+    assert.equals(90,tom.energia())
+  }
+
+  test "Si come a Nibbles, pasa a tener de velocidad máxima 18.7"{
+    tom.comer(jerry)
+    tom.correr(24)
+    tom.comer(nibbles)
+    assert.equals(18.7, tom.velocidad())
+  }
+  test "si Jerry cumple años (3 años de edad), y luego Tom lo vuelve a comer, pasaría a tener 25.9" {
+    tom.comer(jerry)
+    tom.correr(24)
+    tom.comer(nibbles)
+    jerry.cumplirAños()
+    tom.comer(jerry)
+    assert.equals(25.9,tom.velocidad())
+  }
+
 
 }

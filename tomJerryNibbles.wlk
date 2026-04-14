@@ -12,6 +12,9 @@ object tom {
     method energia() {
       return energia
     }
+    method estaFeliz() {
+        return energia > 50      
+    }
 }
 
 object jerry {
