@@ -42,6 +42,11 @@ describe "Test escenario de Tom,Jerry y el otro." { //Siempre debe de existir un
     tom.comer(jerry)
     assert.equals(25.9,tom.velocidad())
   }
-
-
+  test "tom al inicio no esta feliz" {
+    assert.notThat(tom.estaFeliz())    
+  }
+  test "tom ahora esta feliz"{
+    tom.comer(jerry)
+    assert.that(tom.estaFeliz())
+  }
 }
