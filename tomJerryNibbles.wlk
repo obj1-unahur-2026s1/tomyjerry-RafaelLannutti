@@ -4,8 +4,13 @@ object tom {
       energia = energia + 12 + unRaton.peso()
     }
     method correr(metros) {
-      energia = energia - metros / 2
+      energia = energia - self.consumoPorCorrer(metros)
     }
+
+    method consumoPorCorrer(metros) {
+        return metros / 2      
+    }
+
     method velocidad(){
         return 5 + energia / 10
     }
@@ -14,6 +19,16 @@ object tom {
     }
     method estaFeliz() {
         return energia > 50      
+    }
+    method puedeCazar(metros) {
+        return energia >= self.consumoPorCorrer(metros)     
+    }
+    method cazar(unRaton,metros) {
+        if(self.puedeCazar(metros)){
+            self.correr(metros)
+            self.comer(unRaton)
+        }      
+      
     }
 }
 
@@ -36,3 +51,13 @@ object nibbles {
 }
 
 // Inventar otro ratón
+object perez {
+    var dientesRecolectados = 0
+    method peso() {
+      return 30 + dientesRecolectados * 2
+    }
+    method recolectarDientes(unacantidad) {
+        dientesRecolectados += unacantidad
+    }
+  
+}
